@@ -97,7 +97,7 @@
     BTLE SETTINGS
     -----------------------------------------------------------------------*/
 
-    #define CFG_BLE_TX_POWER_LEVEL                     0                        /**< in dBm (Valid values are -40, -20, -16, -12, -8, -4, 0, 4) */
+    #define CFG_BLE_TX_POWER_LEVEL                     -8                        /**< in dBm (Valid values are -40, -20, -16, -12, -8, -4, 0, 4) */
 
     /*---------------------------- BOND MANAGER ---------------------------*/
     #define CFG_BLE_BOND_FLASH_PAGE_BOND               (BLE_FLASH_PAGE_END-1)   /**< Flash page used for bond manager bonding information.*/
@@ -112,16 +112,16 @@
     #define CFG_BLE_SEC_PARAM_MAX_KEY_SIZE             16
 
     /*--------------------------------- GAP -------------------------------*/
-    #define CFG_GAP_APPEARANCE                         GapAdvertisingData::GENERIC_TAG
-    #define CFG_GAP_LOCAL_NAME                         "nRF5x"
+    #define CFG_GAP_APPEARANCE                         GapAdvertisingData::GENERIC_WATCH
+    #define CFG_GAP_LOCAL_NAME                         "PROXXI"
 
-    #define CFG_GAP_CONNECTION_MIN_INTERVAL_MS           50                     /**< Minimum acceptable connection interval */
-    #define CFG_GAP_CONNECTION_MAX_INTERVAL_MS          500                     /**< Maximum acceptable connection interval */
-    #define CFG_GAP_CONNECTION_SUPERVISION_TIMEOUT_MS  4000                     /**< Connection supervisory timeout */
-    #define CFG_GAP_CONNECTION_SLAVE_LATENCY           0                        /**< Slave Latency in number of connection events. */
+    #define CFG_GAP_CONNECTION_MIN_INTERVAL_MS           10                     /**< Minimum acceptable connection interval */
+    #define CFG_GAP_CONNECTION_MAX_INTERVAL_MS           16                     /**< Maximum acceptable connection interval */
+    #define CFG_GAP_CONNECTION_SUPERVISION_TIMEOUT_MS  1000                     /**< Connection supervisory timeout */
+    #define CFG_GAP_CONNECTION_SLAVE_LATENCY           BLE_GAP_CP_SLAVE_LATENCY_MAX                        /**< Slave Latency in number of connection events. */
 
-    #define CFG_GAP_ADV_INTERVAL_MS                    25                       /**< The advertising interval in miliseconds, should be multiply of 0.625 */
-    #define CFG_GAP_ADV_TIMEOUT_S                      180                      /**< The advertising timeout in units of seconds. */
+    #define CFG_GAP_ADV_INTERVAL_MS                    10000                     /**< The advertising interval in miliseconds, should be multiply of 0.625 */
+    #define CFG_GAP_ADV_TIMEOUT_S                      0                      /**< The advertising timeout in units of seconds. */
 /*=========================================================================*/
 
 
