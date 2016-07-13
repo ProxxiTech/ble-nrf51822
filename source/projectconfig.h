@@ -65,7 +65,7 @@
                               Level 0: No debug information generated
 
     -----------------------------------------------------------------------*/
-    #define CFG_DEBUG                                  (1)
+    #define CFG_DEBUG                                  (3)
 
     #if (CFG_DEBUG > 3) || (CFG_DEBUG < 0)
       #error "CFG_DEBUG must be a value between 0 (no debug) and 3"
@@ -117,10 +117,10 @@
 
     #define CFG_GAP_CONNECTION_MIN_INTERVAL_MS           10                     /**< Minimum acceptable connection interval */
     #define CFG_GAP_CONNECTION_MAX_INTERVAL_MS           16                     /**< Maximum acceptable connection interval */
-    #define CFG_GAP_CONNECTION_SUPERVISION_TIMEOUT_MS  1000                     /**< Connection supervisory timeout */
+    #define CFG_GAP_CONNECTION_SUPERVISION_TIMEOUT_MS 16000                     /**< Connection supervisory timeout */
     #define CFG_GAP_CONNECTION_SLAVE_LATENCY           BLE_GAP_CP_SLAVE_LATENCY_MAX                        /**< Slave Latency in number of connection events. */
 
-    #define CFG_GAP_ADV_INTERVAL_MS                    10000                     /**< The advertising interval in miliseconds, should be multiply of 0.625 */
+    #define CFG_GAP_ADV_INTERVAL_MS                    1000                     /**< The advertising interval in miliseconds, should be multiply of 0.625 */
     #define CFG_GAP_ADV_TIMEOUT_S                      0                      /**< The advertising timeout in units of seconds. */
 /*=========================================================================*/
 
