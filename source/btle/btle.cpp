@@ -33,6 +33,7 @@ extern "C" {
 #include "pstorage.h"
 #include "device_manager.h"
 #include "softdevice_handler.h"
+#include "nrf_soc.h"
 #include "ble_stack_handler_types.h"
 }
 
@@ -246,5 +247,10 @@ void assert_nrf_callback(uint16_t line_num, const uint8_t *p_file_name)
 void app_error_handler(uint32_t error_code, uint32_t line_num, const uint8_t *p_file_name)
 {
     ASSERT_STATUS_RET_VOID( error_code );
+
+    // Set info that reboot occurred due to soft error
+    sd_power_gpregret_clr(0xFFFFFFFF);
+    sd_power_gpregret_set(0xFADE0002/*GP_REG_RET_APP_ERROR_CAUSE_REBOOT*/);
+
     NVIC_SystemReset();
 }
